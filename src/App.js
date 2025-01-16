@@ -1,4 +1,3 @@
-import './App.css';
 import Square from './Square';
 import Input from './Input';
 import Button from './Button';
