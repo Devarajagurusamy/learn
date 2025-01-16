@@ -1,9 +1,9 @@
 import React from 'react'
 import './Square.css'
 
-const Square = () => {
+const Square = ({color, hexValue, isDarkText}) => {
   return (
-    <div className="square">Empty value</div>
+    <section className="square">Empty value</section>
   )
 }
 

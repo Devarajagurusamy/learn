@@ -3,12 +3,24 @@ import './Input.css'
 
 const Input = () => {
     return (
-      
-      <div>
-
-          <input type='text' id='colorName' name='colorName' placeholder='Add color name' className="input" aria-label='Color Name' autoFocus/>
-    </div>
-  )
+      <form>
+        <label htmlFor='colorName'>Color Name</label>
+        <input
+          className='input'
+          type='text'
+          id='colorName'
+          name='colorName'
+          placeholder='Add Color Name'
+        />
+        <br />
+        <button
+          className='button'
+          onClick={(e) => {isDarkText ? setIsDarkText(false) : setIsDarkText(true)}}
+        >
+          Toggle text color
+        </button>
+    </form>
+    )
 }
 
 export default Input
