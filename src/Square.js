@@ -1,10 +1,23 @@
-import React from 'react'
-import './Square.css'
+import React from "react";
+import "./Square.css";
 
-const Square = ({color, hexValue, isDarkText}) => {
+const Square = ({ colorValue, hexValue, isDarkText }) => {
   return (
-    <section className="square">Empty value</section>
-  )
-}
+    <section
+      className="square"
+      style={{
+        backgroundColor: colorValue,
+        color: isDarkText ? "black" : "white",
+      }}
+    >
+      <p>{colorValue ? colorValue : "Empty value"}</p>
+      <p>{hexValue ? hexValue : null}</p>
+    </section>
+  );
+};
 
-export default Square
+Square.defaultProps = {
+  colorValue: "Empty color value",
+};
+
+export default Square;

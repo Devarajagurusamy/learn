@@ -7,10 +7,12 @@ body {
 }
 
 .square {
+    color: black;
     width: 150px;
     height: 150px;
     border: 2px solid black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 18px;

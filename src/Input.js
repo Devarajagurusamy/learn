@@ -1,26 +1,34 @@
 import React from 'react'
-import './Input.css' 
+import "./Input.css"; 
+import colornames from "colornames";
 
-const Input = () => {
+
+const Input = ({colorValue, setColorValue, setHexValue, isDarkText, setIsDarkText}) => {
     return (
-      <form>
-        <label htmlFor='colorName'>Color Name</label>
+      <form onSubmit={(e) => e.preventDefault()}>
+        <label>Color Name</label>
         <input
-          className='input'
-          type='text'
-          id='colorName'
-          name='colorName'
-          placeholder='Add Color Name'
+          className="input"
+          type="text"
+          name="colorName"
+          placeholder="Add Color Name"
+          value={colorValue}
+          onChange={(e) => {
+            setColorValue(e.target.value);
+            setHexValue(colornames(e.target.value));
+          }}
         />
         <br />
         <button
-          className='button'
-          onClick={(e) => {isDarkText ? setIsDarkText(false) : setIsDarkText(true)}}
+          className="button"
+          onClick={(e) => {
+            isDarkText ? setIsDarkText(false) : setIsDarkText(true);
+          }}
         >
           Toggle text color
         </button>
-    </form>
-    )
+      </form>
+    );
 }
 
 export default Input
